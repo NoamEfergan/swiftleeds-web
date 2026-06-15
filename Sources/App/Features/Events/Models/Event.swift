@@ -37,17 +37,21 @@ final class Event: Model, Content, @unchecked Sendable {
     @Field(key: "conference")
     var conference: String
     
+    @Field(key: "cfp_closed")
+    var cfpClosed: Bool
+
     @Children(for: \.$event)
     var days: [EventDay]
     
     init() {}
 
-    init(id: IDValue?, name: String, date: Date, location: String, isCurrent: Bool) {
+    init(id: IDValue?, name: String, date: Date, location: String, isCurrent: Bool, cfpClosed: Bool = true) {
         self.id = id
         self.name = name
         self.date = date
         self.location = location
         self.isCurrent = isCurrent
+        self.cfpClosed = cfpClosed
     }
 }
 

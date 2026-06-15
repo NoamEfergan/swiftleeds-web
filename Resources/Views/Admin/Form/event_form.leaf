@@ -35,6 +35,11 @@
     </div>
 
     <div class="form-check form-switch">
+        <input type="checkbox" class="form-check-input" id="cfpClosed" name="cfpClosed" #if(event):#if(event.cfpClosed):checked#endif#else:checked#endif>
+        <label class="form-check-label" for="cfpClosed">CFP closed?</label>
+    </div>
+
+    <div class="form-check form-switch">
         <input type="checkbox" class="form-check-input" id="isCurrent" name="isCurrent" #if(event.isCurrent):checked disabled#endif>
         <label class="form-check-label" for="isCurrent">Is current event?</label>
     </div>

@@ -87,6 +87,7 @@ class Migrations {
         app.migrations.add(EventMigrationV5()) // Add `checkin_key` to event
         app.migrations.add(UserMigrationV2()) // Add `permissions` to user
         app.migrations.add(EventMigrationV6()) // Add `conference` to event ("swiftleeds" - default, or "kotlinleeds")
+        app.migrations.add(EventMigrationV7()) // Add `cfp_closed` to event
 
         do {
             guard let url = Environment.get("DATABASE_URL") else {

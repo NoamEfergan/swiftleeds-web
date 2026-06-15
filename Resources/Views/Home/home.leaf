@@ -24,6 +24,11 @@
         
         #if(count(speakers) > 0):
             #extend("Home/_speakers")
+        #else:
+            #if(event.cfpClosed):
+            #else:
+                #extend("Home/_cfp")
+            #endif
         #endif
         
         #if(event.year == 2024):

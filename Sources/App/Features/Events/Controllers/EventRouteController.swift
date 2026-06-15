@@ -59,6 +59,7 @@ struct EventRouteController: RouteCollection {
             event.location = input.location
             event.isCurrent = isCurrent
             event.showSchedule = input.showSchedule ?? false
+            event.cfpClosed = input.cfpClosed ?? false
             event.checkinKey = input.checkinKey ?? event.checkinKey
             event.conference = request.application.conference.rawValue
             
@@ -75,6 +76,7 @@ struct EventRouteController: RouteCollection {
             )
             
             event.conference = request.application.conference.rawValue
+            event.cfpClosed = input.cfpClosed ?? false
             eventID = try event.requireID()
 
             try await event.create(on: request.db)
@@ -107,6 +109,7 @@ struct EventRouteController: RouteCollection {
         let location: String
         let isCurrent: Bool?
         let showSchedule: Bool?
+        let cfpClosed: Bool?
         let checkinKey: String?
     }
 }

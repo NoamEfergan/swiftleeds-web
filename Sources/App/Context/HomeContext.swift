@@ -37,6 +37,7 @@ struct EventContext: Codable {
     let isFuture: Bool
     let isPast: Bool
     let isHidden: Bool
+    let cfpClosed: Bool
 
     init(event: Event) {
         name = event.name
@@ -59,6 +60,7 @@ struct EventContext: Codable {
         isFuture = event.date > Date() && !isKnownDate
         isPast = event.date <= Date() && isKnownDate
         isHidden = isKnownDate != true
+        cfpClosed = event.cfpClosed
     }
     
     private static func buildConferenceDateString(for event: Event) -> String? {
