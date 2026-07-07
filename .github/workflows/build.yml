@@ -83,6 +83,7 @@ jobs:
 
   deploy:
     runs-on: ubuntu-latest
+    if: github.repository_owner == 'SwiftLeeds'
     needs: build
 
     strategy:
